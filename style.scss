@@ -11,310 +11,142 @@
 
 @font-face {
     font-family: Ageo;
-    src: url(assets/Ageo.otf);
+    src: url(assets/ageo/AgeoPersonalUse.otf);
 }
 @font-face {
     font-family: Ageo-bold;
-    src: url(assets/Ageo-Bold.otf);
+    src: url(assets/ageo/AgeoPersonalUse-Bold.otf);
+}
+@font-face {
+    font-family: Ageo-light;
+    src: url(assets/ageo/AgeoPersonalUse-Light.otf);
 }
 
-//Hard coded mobile value
-@mixin desktop {
-    @media(min-width: 600px){
-        @content;
-    }
-}
-@mixin tablet {
-    @media (min-width: 544px ) {
-        @content
-    }
-}
 *{
     font-family: 'Ageo', sans-serif;
 }
 
-//MOBILE-FIRST APPROACH
 
-.container{
-    width: 85%;
+//Desktop First Approach
+.container {
+    width: 80%;
     margin: 0 auto;
-
-    @include desktop{
-        width: 70%;
-    }
 }
 
-body{
-    height: 100vh;
-    width: 100%;
-    overflow: scroll;
-
-    @include desktop{
-        overflow: hidden;
-    }
-}
-
-nav{
-    height: 12%;
+nav {
     display: flex;
     justify-content: space-between;
-    padding: 15px 0;
-    margin-top: 15px !important;
-
-    @include desktop{
-        margin-top: 0 !important;
-        height: 10%;
-        padding: 10px ;
-        margin-bottom: 10px !important;
-    }
-
-    .logo{
-        box-sizing: border-box;
-        height: 100%;
-        padding: 20px 0;
-    }
-
-    img{
-        height: 100%;
-    }
-
-    .nav-links{
-
-        //display: none;
-
-        box-sizing: border-box;
-        height: 100%;
-        padding: 24px 0;
-
-        
-    }
-
-    .donate{
-        height: 100%;
-        width: 120px;
-        background: none;
-        border: 2px solid var(--primary);
-        color: var(--primary);
-        font-size: 16px;
-        font-weight: 600;
-        padding:  20px 0;
-
-        display: flex;
-        justify-content: center;
-        align-items: center;
-
-        @include desktop{
-            width: 140px;
-            height: 75%;
-            font-size: 20px;
-            padding: 24px 10px;
-        }
-
-    }
-
-    a{
-        text-decoration: none;
-    }
-    button:hover{
-        cursor: pointer;
-        background-color: var(--primary);
-        color: #fff;
-        transition: linear 0.4s;
-    }
-}
-
-main{
-
-    width: 100%;
-
-    @include desktop{
-        display: flex;
-        width: 70%;
-        margin: 0 auto;
-    }
-
-    .img-div{
-        width: 100%;
-        position: relative;
-        background-image: url('assets/banner-img.png');
-        height: 40vh;
-        background-position: center;
-        background-size: cover;
-
-        @include desktop{
-            height: 80vh;
-            width: 75%;
-        }
-
-        .field{
-            position: absolute;
-            bottom: 24px;
-            background-color: var(--primary);
-            font-weight: 800;
-            font-size: 14px;
-            line-height: 153.5%;
-            color: #fff;
-            padding: 6px 16px;
-            border-radius: 18px;
-
-            @include desktop{
-                left: 24px;
-            }
-        }
-    }
-    
-
-    .info{
-        margin-top: 42px;
-
-        @include desktop{
-            //position: absolute;
-            //bottom: 24px
-            position: relative;
-            bottom: 0;
-            display: flex;
-            flex-direction: column;
-            justify-content: end;
-            padding: 40px;
-            padding-right: 0;
-            padding-bottom: 0;
-        }
-    }
-    .mobile{
-        display: inline;
-
-        @include desktop{
-            display: none;
-        }
-    }
-    .desktop{
-        display: none;
-
-        @include desktop{
-            display: inline;
-        }
-    }
-    h2{
-        font-size: 36px;
-        line-height: 43px;
-        font-weight: 400;
-
-        @include desktop{
-            font-size: 42px;
-        }
-    }
-    strong{
-        font-family: 'Ageo-bold', sans-serif;
-    }
-
-    .bottom{
-        display: flex;
-        justify-content: space-between;
-        position: relative;
-
-        @include desktop{
-            bottom: 0;
-        }
-       
-    }
-    p{
-        width: 50%;
-        font-style: normal;
-        font-size: 16px;
-        line-height: 25px;
-        padding: 20px 0;
-
-        @include desktop{
-            font-size: 20px;
-            line-height: 32px;
-        }
-    }
-    
-    .btn-container{
-       
-        position: absolute;
-        bottom: 30px;
-        right: 0;
-
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-
-                
-        .btn{
-            height: 86px;
-            width: 86px;
-            background-color: var(--primary);
-            border-radius: 50%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            animation: pulse 1.5s ease-in-out 0s infinite alternate;
-            margin: 0;
-        }
-
-        @keyframes pulse {
-            from {
-                transform: scale(1);
-            }
-            to {
-                transform: scale(1.25);
-            }
-        }
-
-        .continue{
-            display: none;
-
-            color: var(--primary);
-            text-decoration: none;
-            //margin-top: 10px;
-            font-weight: 400;
-            font-size: 20px;
-            width: 200%;
-            text-align: center !important;
-
-            p{
-                text-align: center;
-                margin: 0 auto;
-                padding: 0;
-                padding-top: 20px;
-            }
-            @include desktop{
-                display: inline;
-            }
-        }
-    }
-    
-}
-
-//COMING SOON
-
-.absolute{
-    height: 100vh;
-    width: 100%;
-    background-color: var(--primary);
-
-    display: flex;
-    justify-content: center;
     align-items: center;
-
-    font-size: 24px;
-    color: var(--accent);
-    font-weight: 200;
-    text-align: center;
-
-    flex-direction: column;
-}
-
-video{    
-    width: 90%;
-    height: auto;
-    margin-top: 10px;
-
-    @include desktop{
-        height: 50vh;
-        margin-top: 50px;
+    //padding: 16px 0;
+    padding: 16px 0;
+    margin-top: 10px !important;
+    
+    button{
+        border: 2px var(--primary) solid ;
+        width: 140px;
+        height: 42px;
+        background: none;
+        color: var(--primary);
+        font-size: 18px;
     }
 }
 
+.hero{
+    height: 70vh;
+    width: 100%;
+    background: var(--primary);
+    color: #fff;
+    position: relative;
+
+    .hero-info{
+        position: absolute;
+        width: 40%;
+        left: 10%;
+        top: 50%;
+        transform: translateY(-50%);
+
+        h1{
+            font-size: 36px;
+            font-weight: 100;
+            span{
+                font-family: 'Ageo-bold', sans-serif;
+            }
+        }
+        p{
+            font-family: 'Ageo-light', sans-serif;
+            font-size: 16px;
+            line-height: 150%;
+            width: 70%;
+            padding: 14px 0;
+            margin-bottom: 14px;
+        }
+        .btn-primary{
+            height: 42px;
+            background: #fff;
+            border: none;
+            color: var(--primary);
+            width: 140px;
+            font-size: 18px;
+        }
+        .btn-outline{
+            height: 42px;
+            width: 180px !important;
+            background: none;
+            border: 2px #fff solid;
+            color: #fff;
+            width: 140px;
+            font-size: 18px;
+        }
+        button{
+            margin-right: 16px;
+        }
+    }
+    .hero-slider{
+        width: 55%;
+        float: right;
+        .img{
+            height: 70vh;
+            background-image: url('assets/banner\ 1.png');
+        }
+    }
+    
+}
+
+.stats{
+    height: 100vh;
+    margin: 15vh auto;
+    display: flex;
+    .left{
+        width: 50%;
+        h1{
+            font-size: 36px;
+            font-weight: 100;
+            span{
+                font-family: 'Ageo-bold', sans-serif;
+            }
+        }
+        p{
+            font-family: 'Ageo-light', sans-serif;
+            font-size: 16px;
+            line-height: 150%;
+            width: 70%;
+            padding: 14px 0;
+            margin-bottom: 14px;
+        }
+        .btn-primary{
+            height: 42px;
+            background: var(--primary);
+            border: none;
+            color: #fff;
+            width: 140px;
+            font-size: 18px;
+        }
+    }
+    .right{
+        .box{
+            height: 240px;
+            width: 240px;
+            background: #F5F5F5;
+        }
+    }
+}
